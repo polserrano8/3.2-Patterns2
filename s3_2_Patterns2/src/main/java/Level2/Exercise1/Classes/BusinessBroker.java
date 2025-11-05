@@ -19,15 +19,18 @@ public class BusinessBroker implements Subject {
         this.stock2 = initialStock2;
         this.stock3 = initialStock3;
     }
+    @Override
     public void registerObserver(Observer o){
         observers.add(o);
     }
+    @Override
     public void removeObserver(Observer o){
         int i = observers.indexOf(o);
         if(i >= 0){
             observers.remove(i);
         }
     }
+    @Override
     public void notifyObserver(){
         for(int i=0; i < observers.size(); i++){
             Observer observer = (Observer)observers.get(i);
